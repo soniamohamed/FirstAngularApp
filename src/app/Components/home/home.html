@@ -1,0 +1,100 @@
+ <div class="p-4 w-50 mx_auto">
+          <input [(ngModel)]="userData"
+          class="form-control" type="text" placeholder="Default input" aria-label="default input example">
+        </div>
+      <h2 class="text-center">Data : {{userData}}</h2>
+        <section class="py-5 bg-light">
+  <div class="container">
+    @if (role==='Admin')
+    {
+     <h2 class="text-center">Hello Admin</h2>
+    }
+   @else if (role==='User')
+    {
+     <h2 class="text-center">Hello User</h2>
+    }
+     @else if (role==='Editor')
+    {
+     <h2 class="text-center">Hello Editor</h2>
+    }
+    @else 
+    {
+     <h2 class="text-center">invalid credintials</h2>
+    }
+     <!-- @switch (role) {
+      @case ('Admin') {
+         <h2 class="text-center">Hello Admin</h2>
+      }
+      @case ('User') {
+         <h2 class="text-center">Hello User</h2>
+      }
+      @case ('Editor') {
+         <h2 class="text-center">Hello Editor</h2>
+      }
+      @default {
+         <h2 class="text-center">invalid credintials</h2>
+      }
+     } -->
+    <div class="row g-4">
+      @for (product of productList; track $index) {
+        <!-- @if (product.onSale) { -->
+        <div class="col-sm-6 col-md-4 col-lg-3 d-flex align-items-stretch">
+          <div class="card h-100 w-100 border-0 shadow-sm rounded-3 overflow-hidden position-relative product-card">
+            
+            <span 
+              [class]="product.onSale ? 'bg-success' : 'bg-secondary'"
+              class="badge position-absolute top-0 end-0 m-2 px-2 py-1 z-1">
+              {{ product.onSale ? 'On Sale' : 'Regular' }}
+            </span>
+
+         
+            <div class="card-img-wrapper overflow-hidden bg-light position-relative" style="height: 200px;">
+              <img [src]="product.imageCover" class="card-img-top w-100 h-100 object-fit-cover" [alt]="product.title">
+            </div>
+
+            <!-- Card Body -->
+            <div class="card-body d-flex flex-column justify-content-between p-3">
+              <div>
+                <h5 class="card-title text-truncate fw-bold mb-1" [title]="product.title">
+                  {{ product.title }}
+                </h5>
+                <p class="card-text text-muted small mb-3 text-line-clamp-2" style="min-height: 38px;">
+                  {{ product.description }}
+                </p>
+              </div>
+
+              <div>
+                <!-- Price and Quantity Section -->
+                <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                  <span class="fw-bold text-primary fs-5"> {{ product.price }} <small class="fs-6 text-muted">EGP</small></span>
+                  <span class="badge bg-light text-dark border">Qty: {{ product.quantity }}</span>
+                </div>
+
+                
+                  <div class="row g-1 mb-3">
+                    @for (imgItem of product.images.slice(0, 4); track $index) {
+                      <div class="col-3">
+                        <img [src]="imgItem" class="img-fluid rounded border object-fit-cover" style="height: 40px; width: 100%;" [alt]="product.title">
+                      </div>
+                    }
+                  </div>
+               
+                <button class="btn btn-primary w-100 d-flex align-items-center justify-content-center gap-2 rounded-2">
+                  <i class="fa-solid fa-cart-shopping"></i>
+                  <span>Add to Cart</span>
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      }
+    <!-- } -->
+      @empty {
+        <div class="alert alert-danger" role="alert">
+  No Data Found ...
+</div>
+      }
+    </div>
+  </div>
+</section>
