@@ -9,14 +9,42 @@
     <div class="collapse navbar-collapse" id="navContent">
       <ul class="navbar-nav ms-auto gap-2 my-2 my-lg-0 align-items-lg-center">
         <li class="nav-item">
-          <a class="nav-link custom-nav-link active fw-semibold px-3 py-2 rounded-2" href="#">Home</a>
+          <a class="nav-link custom-nav-link active fw-semibold px-3 py-2 rounded-2" routerLink="/home" routerLinkActive="bg-danger text-white">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link custom-nav-link fw-semibold px-3 py-2 rounded-2" href="#">About</a>
+          <a class="nav-link custom-nav-link fw-semibold px-3 py-2 rounded-2" routerLink="/about" routerLinkActive="bg-danger text-white">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link custom-nav-link fw-semibold px-3 py-2 rounded-2" href="#">Contact</a>
+          <a class="nav-link custom-nav-link fw-semibold px-3 py-2 rounded-2" routerLink="/contact" routerLinkActive="bg-danger text-white">Contact</a>
         </li>
+           <!-- <li class="nav-item">
+          <a class="nav-link custom-nav-link fw-semibold px-3 py-2 rounded-2" routerLink="/gallery" routerLinkActive="bg-danger text-white">Gallery</a>
+        </li> -->
+        <!-- قائمة Gallery المنسدلة -->
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Gallery
+    </a>
+    <ul class="dropdown-menu">
+      @for (item of menuItems; track $index)
+
+          {
+
+            <li>          
+
+            <a [routerLink]="'/gallery/' + item.path" 
+         data-bs-dismiss="dropdown"
+         routerLinkActive="bg-danger text-white"
+         class="dropdown-item p-2 rounded text-decoration-none">
+         {{ formatTitle(item.title) }}
+      </a>
+           </li>
+
+          }
+
+        </ul> 
+
+
       </ul>
     </div>
   </div>
