@@ -1,5 +1,16 @@
-<section class="py-5">
+<section class=" bg-secondary py-5">
+
+  <ul>
+      @for (friend of friendsContact; track $index) 
+      {
+         <li>
+        {{friend}}
+      </li>
+      }
+     
+    </ul>
   <div class="container py-4">
+    
     
     <div class="text-center mb-5">
       <h2 class="fw-bold">تواصل معنا</h2>
@@ -77,4 +88,17 @@
     </div>
 
   </div>
+  <hr/>
+        <!-- <app-alert>
+      <h3>Hello Alert From Contact </h3>
+      <p>Alert Alert! [contact]</p>
+      <button> Alert Contact</button>
+    </app-alert> -->
+    <app-my-btn>
+      <!-- <span >Join From Contact</span> -->
+       <button class="btn btn-danger">Join</button>
+    </app-my-btn>
+
+    
+
 </section>

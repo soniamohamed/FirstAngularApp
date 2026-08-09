@@ -15,14 +15,20 @@
           <a class="nav-link custom-nav-link fw-semibold px-3 py-2 rounded-2" routerLink="/about" routerLinkActive="bg-danger text-white">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link custom-nav-link fw-semibold px-3 py-2 rounded-2" routerLink="/contact" routerLinkActive="bg-danger text-white">Contact</a>
+          <a class="nav-link custom-nav-link fw-semibold px-3 py-2 rounded-2" routerLink="/contact" routerLinkActive="bg-danger text-white"  >Contact</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link custom-nav-link fw-semibold px-3 py-2 rounded-2" routerLink="/products" routerLinkActive="bg-danger text-white"  >Products</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link custom-nav-link fw-semibold px-3 py-2 rounded-2" routerLink="/movies" routerLinkActive="bg-danger text-white"  >Movies</a>
         </li>
            <!-- <li class="nav-item">
-          <a class="nav-link custom-nav-link fw-semibold px-3 py-2 rounded-2" routerLink="/gallery" routerLinkActive="bg-danger text-white">Gallery</a>
+          <a class="nav-link custom-nav-link fw-semibold px-3 py-2 rounded-2" routerLink="/gallery" routerLinkActive="bg-danger text-white" >Gallery</a>
         </li> -->
         <!-- قائمة Gallery المنسدلة -->
   <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle " routerLink="/gallery"  routerLinkActive="bg-danger text-white"  role="button" data-bs-toggle="dropdown" aria-expanded="false" [routerLinkActiveOptions]="{exact:true}">
       Gallery
     </a>
     <ul class="dropdown-menu">

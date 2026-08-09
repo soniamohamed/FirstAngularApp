@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { ProductData } from '../../product-data';
+import { ProductData } from '../../Models/product-data';
 import { FormsModule } from '@angular/forms';
+import { Card } from "../card/card";
 @Component({
   selector: 'app-home',
-  imports: [FormsModule],
+  imports: [FormsModule, Card],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })

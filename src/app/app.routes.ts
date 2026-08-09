@@ -6,7 +6,8 @@ import { About } from './Components/about/about';
 import { NotFoundComponent } from './Components/not-found-component/not-found-component';
 import { Gallery } from './Components/gallery/gallery';
 import { GalleryChildrenData } from './gallery-children-data';
-
+import { Products } from './Components/products/products';
+import { Movies } from './Components/movies/movies';
 export const routes: Routes = [
     { path:'',
     redirectTo:'home',
@@ -16,7 +17,8 @@ export const routes: Routes = [
     {path:'about',component:About,title:'Route | About Page'},
     {path:'gallery',component:Gallery,title:'Route | Gallery Page'
          ,children:GalleryChildrenData },
-
+ {path:'products',component:Products,title:'Route | Products Page'},
+ {path:'movies',component:Movies,title:'Route | Movies Page'},
 //    {path:'tv',component:Tv,title:'Route | Gallery| Tv Page'}, 
 //     {path:'laptop',component:Laptop,title:'Route | Gallery| Laptop Page'}
 //     ]

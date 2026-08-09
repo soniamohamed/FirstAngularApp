@@ -1,0 +1,56 @@
+<section class="movies-section">
+
+  <div class="section-header">
+    <h1>Movies</h1>
+    <p>Explore our movie collection</p>
+  </div>
+
+  <div class="movies-grid">
+
+    @for (movie of MoviesList; track movie.id) {
+
+      <div class="movie-card">
+
+        <!-- Movie Poster -->
+        <div class="poster-container">
+
+          <img
+            [src]="movie.posterURL"
+            [alt]="movie.title"
+          >
+
+        </div>
+
+        <!-- Movie Information -->
+        <div class="movie-content">
+
+          <h2 class="movie-title">
+            {{ movie.title }}
+          </h2>
+
+          <p class="imdb-id">
+            IMDb ID:
+            <span>{{ movie.imdbId }}</span>
+          </p>
+
+          <button class="details-btn">
+            View Details
+          </button>
+
+        </div>
+
+      </div>
+
+    }
+
+    @empty {
+
+      <div class="no-movies">
+        No movies found.
+      </div>
+
+    }
+
+  </div>
+
+</section>

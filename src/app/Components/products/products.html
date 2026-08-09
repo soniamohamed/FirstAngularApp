@@ -1,0 +1,94 @@
+<section class="products-section">
+
+  <div class="section-header">
+    <h1>Our Products</h1>
+    <p>Explore our latest products</p>
+  </div>
+
+
+  <div class="products-grid">
+
+    @for (product of productList; track product.id) {
+
+      <div class="product-card">
+
+        <!-- Product Image -->
+
+        <div class="image-container">
+
+          <img
+            [src]="product.image"
+            [alt]="product.title"
+          >
+
+          <span class="category">
+            {{ product.category }}
+          </span>
+
+        </div>
+
+
+        <!-- Product Content -->
+
+        <div class="product-content">
+
+          <h3 class="product-title">
+            {{ product.title }}
+          </h3>
+
+
+          <p class="description">
+            {{ product.description }}
+          </p>
+
+
+          <!-- Rating -->
+
+          <div class="rating">
+
+            <span class="star">
+              ★
+            </span>
+
+            <span class="rate">
+              {{ product.rating.rate }}
+            </span>
+
+            <span class="reviews">
+              ({{ product.rating.count }} reviews)
+            </span>
+
+          </div>
+
+
+          <!-- Footer -->
+
+          <div class="product-footer">
+
+            <span class="price">
+              ${{ product.price }}
+            </span>
+
+
+            <button class="details-btn">
+              View Details
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    }
+    @empty {
+
+      <div class="no-products">
+        No products available.
+      </div>
+
+    }
+
+  </div>
+
+</section>

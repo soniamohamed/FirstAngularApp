@@ -1,0 +1,104 @@
+.success-alert {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  width: calc(100% - 30px);
+  max-width: 700px;
+
+  margin: 20px auto;
+  padding: 18px 20px;
+
+  background: #e8f7f0;
+  border: 1px solid #b7e4cf;
+  border-right: 5px solid #198754;
+  border-radius: 12px;
+
+  color: #145c3e;
+
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
+}
+
+/* علامة الصح */
+.success-icon {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #198754;
+  color: white;
+
+  border-radius: 50%;
+
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+/* نص الرسالة */
+.success-content {
+  flex: 1;
+}
+
+.success-title {
+  display: block;
+  margin-bottom: 5px;
+
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.success-message {
+  margin: 0;
+
+  font-size: 14px;
+  line-height: 1.7;
+  color: #487361;
+}
+
+/* الجزء الخاص بالزر أو المحتوى الإضافي */
+.success-actions {
+  padding-right: 16px;
+  border-right: 1px solid #b7d8c9;
+}
+
+/* تنسيق الزر الموجود داخل ng-content */
+.success-actions button {
+  padding: 9px 16px;
+
+  border: none;
+  border-radius: 7px;
+
+  background-color: #198754;
+  color: white;
+
+  font-size: 14px;
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.success-actions button:hover {
+  background-color: #146c43;
+  transform: translateY(-1px);
+}
+
+/* الموبايل */
+@media (max-width: 600px) {
+  .success-alert {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .success-actions {
+    width: 100%;
+    padding: 12px 54px 0 0;
+
+    border-right: none;
+    border-top: 1px solid #b7d8c9;
+  }
+}
